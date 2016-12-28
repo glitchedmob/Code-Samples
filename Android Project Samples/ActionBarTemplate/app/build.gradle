@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
+    defaultConfig {
+        applicationId "com.example.aaron.actionbartemplate"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+}
+
+ext {
+    supportLibVersion = '24.2.0'  // variable that can be referenced to keep support libs consistent
+}
+
+dependencies {
+    compile "com.android.support:appcompat-v7:${supportLibVersion}"
+    compile "com.android.support:design:${supportLibVersion}"
+}
+
+dependencies {
+    compile "com.android.support:recyclerview-v7:${supportLibVersion}"
+}
+
+dependencies {
+    compile "com.android.support:percent:${supportLibVersion}"
+}
+
+// This config only works for Android Gradle Plugin v2.1.0 or higher:
+android {
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
+}
+
+dependencies {
+    compile "com.android.support:support-vector-drawable:${supportLibVersion}"
+    // VectorDrawableCompat
+    compile "com.android.support:animated-vector-drawable:${supportLibVersion}"
+    // AnimatedVectorDrawableCompat
+}
+
+dependencies {
+    compile "com.android.support:transition:${supportLibVersion}"
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:24.+'
+}
+dependencies {
+    compile "com.android.support:support-annotations:${supportLibVersion}"
+}

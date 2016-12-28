@@ -1,0 +1,30 @@
+/* Set html and body to take up the entire screen so child elements can take up the
+   entire screen as well  */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* This fixes the white borders around the slides that appear in some browsers */
+body {
+  margin: 0;
+}
+
+/* Make each slide fill the screen */
+#slide-1, #slide-2, #slide-3 {
+  height: 100%;
+  width: 100%;
+}
+
+/* Give each of the slides a background image */
+#slide-1 {
+  background: url("../images/test2.jpg") no-repeat fixed center center / cover transparent;
+}
+
+#slide-2 {
+  background: url("../images/test3.jpg") no-repeat center center / cover transparent;
+}
+
+#slide-3 {
+  background: url("../images/test1.jpg") no-repeat fixed center bottom transparent;
+}
